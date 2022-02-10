@@ -103,12 +103,12 @@
 
 // ------------------Number In Js And Method
 
-let num = 3;
+// let num = 3;
 
-console.log(Number(num) + Number(num));
-console.log(num + num);
-console.log(+true * num + +true * num);
-console.log(num ** 2 - num);
+// console.log(Number(num) + Number(num));
+// console.log(num + num);
+// console.log(+true * num + +true * num);
+// console.log(num ** 2 - num);
 
 // let d ="-100"
 // let e = "20"
@@ -705,15 +705,21 @@ console.log(userName[0].repeat(3).toLowerCase());
 // let str = '';
 
 // for (start; start < swappedName.length; start++) {
-//     if (swappedName[start] === swappedName[start].toLowerCase()) {
-//         str += swappedName[start].toUpperCase()
-//     }
-//     else {
-//         str += swappedName[start].toLowerCase()
-//     }
+//   if (swappedName[start] === swappedName[start].toLowerCase()) {
+//       str += swappedName[start].toUpperCase()
+//   }
+//   else {
+//       str += swappedName[start].toLowerCase()
+//   }
 // }
 
 // console.log(str);
+
+// Advancde Solution by used Map And Arrow Function
+
+// let swp = swappedName.split("").map( Element => Element === Element.toLowerCase() ? Element.toUpperCase() : Element.toLowerCase()).join("")
+
+// console.log(swp)
 
 // Assignments Number Seven To For ----------- loop
 
@@ -1180,11 +1186,11 @@ console.log(userName[0].repeat(3).toLowerCase());
 
 // -----------------------Scope - Lexical(Static)
 
-let a = 30
+// let a = 30;
 
 // function parent() {
 //   let a = 10;
-  
+
 //   function child() {
 //     // Just For Try
 //     // let a = 20
@@ -1216,7 +1222,7 @@ let a = 30
 // }
 // var a=1;
 // console.log(a);
-// one();  
+// one();
 
 // function one(){
 
@@ -1233,3 +1239,366 @@ let a = 30
 // console.log(a);
 // one();
 
+// -------------------Higher Order Functions------  Map
+
+// -------------Note Important
+
+// - Map
+//   --- method creates a new array
+//   --- populated with the results of calling a provided function on every element
+//   --- in the calling array.
+
+//   Syntax map(callBackFunction(Element, Index, Array) { }, thisArg)
+//   - Element => The current element being processed in the array.
+//   - Index => The index of the current element being processed in the array.
+//   - Array => The Current Array
+
+//   Notes
+//   - Map Return A New Array
+
+//   Examples
+//   - Anonymous Function
+//   - Named Function
+
+// let myNums = [1, 2, 3, 4, 5, 6];
+
+// let newArray = [];
+
+// for (let i = 0; i < myNums.length; i++) {
+//   newArray.push(myNums[i] + myNums[i]);
+// }
+
+// console.log(newArray);
+
+// Same Idea With Map
+
+// Anonymous Function
+
+// let addSelf = myNums.map(function (element, index ,arr) {
+//   console.log(`Current Element => ${element}`);
+//   console.log(`Current Index => ${index}`);
+//   console.log(`Array => ${arr}`);
+//   console.log(`This => ${this}`);
+//   return element + element
+// }, 10)
+
+// Arrwo Function
+
+// let addSelf = myNums.map((element) => element + element)
+
+// console.log(addSelf);
+
+// Named Function
+
+// function addition(ele) {
+//   return ele + ele
+// }
+
+// let add = myNums.map(addition)
+
+// console.log(add);
+
+//  ------------------Higher Order Functions----------Map Practice
+
+// Map
+// - Swap Cases
+// - Inverted Numbers
+// - Ignore Boolean Value
+
+// let swappingCases = "elZERo";
+// let invertedNumbers = [1, -10, -20, 15, 100, -30];
+// let ignoreNumbers = "Elz123er4o";
+
+// let sw = swappingCases.split("").map(function (ele) {
+//   return ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase();
+// }).join("");
+
+// console.log(sw);
+
+// let inv = invertedNumbers.map( function (ele) {
+//   return -ele
+// })
+
+// console.log(inv);
+
+// let ign = ignoreNumbers.split("").map( function(ele) {
+//   return isNaN(parseInt(ele)) ? ele : ""
+// }).join("")
+
+// console.log(ign);
+
+// Arrow Function Version
+
+// let ign = ignoreNumbers.split("").map( (ele) => isNaN(parseInt(ele)) ? ele : ""
+// ).join("")
+
+// console.log(ign);
+
+//  ------------------Higher Order Functions-------Filter
+
+// - Filter
+// --- method creates a new array
+// --- with all elements that pass the test implemented by the provided function.
+
+// Syntax filter(callBackFunction(Element, Index, Array) { }, thisArg)
+// - Element => The current element being processed in the array.
+// - Index => The index of the current element being processed in the array.
+// - Array => The Current Array
+
+// Get Friends With Name Starts With A
+
+// let friends = ["Ahmed", "Sameh", "Sayed", "Asmaa", "Amgad", "Israa"];
+
+// let filterdFrinends = friends.filter(function (el) {
+//   return el.startsWith("A") ? true : false;
+// });
+
+// console.log(filterdFrinends);
+
+// // Get Even Numbers Only
+
+// let numbers = [11, 20, 2, 5, 17, 10];
+
+// let evenNumbers = numbers.filter(function (el) {
+//   return el % 2 === 0;
+// });
+
+// console.log(evenNumbers);
+
+// Test Map vs filter
+
+// let addMap = numbers.map( function ( el) {
+//   return el + el
+// })
+
+// console.log(addMap);
+
+// let addFiltre = numbers.filter( function ( el) {
+//   return el + el
+// })
+
+// console.log(addFiltre);
+
+// ----------------Higher Order Functions---------------Filter Practice
+
+// Filter Words More Than 4 Characters
+// let sentence = "I Love Foood Code Too Playing Much";
+
+// let smallWords = sentence.split(" ").filter( function (el) {
+//   return el.length <= 4
+// }).join(" ")
+
+// console.log(smallWords);
+
+// Ignore Numbers
+// let ignoreNumbers = "Elz123er4o";
+
+// let ign = ignoreNumbers.split("").filter(function (ele) {
+//   return isNaN(parseInt(ele));
+// }).join("");
+
+// console.log(ign);
+
+// Filter Strings + Multiply
+// let mix = "A13BS2ZX";
+
+// let mixedContent = mix.split("").filter(function (ele) {
+//   return !isNaN(parseInt(ele))
+// }).map(function (ele) {
+//   return ele * ele
+// })
+// .join(" ")
+
+// console.log(mixedContent);
+
+//  -----------------Higher Order Functions-------------Reduce
+
+/*
+- Reduce
+--- method executes a reducer function on each element of the array,
+--- resulting in a single output value.
+
+Syntax
+reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, initialValue)
+- Accumulator => the accumulated value previously returned in the last invocation
+- Current Val => The current element being processed in the array
+- Index => The index of the current element being processed in the array.
+---------- Starts from index 0 if an initialValue is provided.
+---------- Otherwise, it starts from index 1.
+- Array => The Current Array
+*/
+
+// let nums = [10, 20, 15, 30];
+
+// let add = nums.reduce(function (acc, current, index, arr) {
+//   console.log(`This Is Accumulator ${acc}`);
+//   console.log(`This Is current ${current}`);
+//   console.log(`This Is index ${index}`);
+//   console.log(acc + current);
+//   console.log(`###################`);
+//   return acc +current
+// })
+
+// console.log(add);
+
+//  -------------------Higher Order Functions------------Reduce Practic
+
+// let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test", "Propaganda_Two"];
+
+// let ckeck = theBiggest.reduce(function (acc, current, index, arr) {
+//   console.log(`This Is Accumulator ${acc}`);
+//   console.log(`This Is current ${current}`);
+//   console.log(acc .length > current.length ? acc : current    );
+//   console.log(`###################`);
+//   return acc .length > current.length ? acc : current
+// })
+
+// console.log(ckeck);
+
+// let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+
+// let finalString = removeChars.filter( function ( ele) {
+//   return !ele.startsWith("@")
+// }).reduce( function (acc, current) {
+//   return `${acc}${current}`
+// })
+
+// console.log(finalString);
+
+//  ----------------Higher Order Functions----------ForEach And Practice
+
+/*
+  - forEach
+  --- method executes a provided function once for each array element.
+
+  Syntax forEach(callBackFunction(Element, Index, Array) { }, thisArg)
+  - Element => The current element being processed in the array.
+  - Index => The index of the current element being processed in the array.
+  - Array - The Current Array
+
+  Note
+  - Doesnt Return Anything [Undefined]
+  - Break Will Not Break The Loop
+*/
+
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".content div");
+
+// allLis.forEach(function (ele) {
+//   ele.onclick = function () {
+//     // Remove Active Class form All Elements
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     // Add Active Class To This Element
+//     this.classList.add("active");
+//     // Hide All Divs
+//     allDivs.forEach(function (ele) {
+//       ele.style.display = "none";
+//     });
+//   };
+// });
+
+// Higher Order Function Challenge
+
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+// let solution = myString.split("").filter( (ele) => isNaN(parseInt(ele)))
+//                        .map( function (ele, index, array) {
+//                         for (let i = index + true; i < array.length; i++) {
+//                           if (array[i] == ele) {
+//                             break
+//                           }else {
+//                             return ele
+//                           }
+//                         }
+//                        } )
+//                       .reduce( (acc, current) => acc + current)
+
+// console.log(solution);
+
+// Assignment Number One
+
+// let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+// let mixed = mix.map(function (ele) {
+//   return isNaN(parseInt(ele)) ? ele : ""
+// }).reduce(function (acc, current) {
+//   return acc + current
+// })
+
+// console.log(mixed);
+
+// Solution By Arrow Function
+
+// let mixedTwo = mix.map( ele => isNaN(parseInt(ele)) ? ele : "" )
+//                   .reduce( (acc, current) => acc + current)
+
+// console.log(mixedTwo);
+
+// Assignment Number Two
+
+// let myString = "EElllzzzzzzzeroo";
+
+// let str = myString.split("").filter( function (ele,index,array) {
+//   for(let x = index+1; x <= array.length; x++){
+//     if (array[x] === ele){
+//       break;
+//     }
+//     else{
+//       return ele
+//     }
+//   }
+
+// }).join("")
+
+// console.log(str);
+
+// Assignment Number Three
+
+// let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+// function array (arr) {
+//   for(let x = 0; x < arr.length; x++){
+//     if(Array.isArray(arr[x])){
+//       array(...arr[x])
+//     }
+//   }
+// }
+
+// array(["E", "l", "z", ["e", "r"], "o"])
+
+// Assignmrnt Number Four
+
+// let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+// let num = numsAndStrings.filter( function (el) {
+//   return !isNaN(parseInt(el))
+// }).map( ele => -ele)
+
+// console.log(num);
+
+// Assignment Number Five
+
+// let nums = [2, 12, 11, 5, 10, 1, 99];
+
+// let result = nums.reduce( function (acc , current) {
+//  current % 2 === 0 ? acc * current : acc + current
+// } , 1)
+
+// console.log(result);
+
+// Assignment simple problem solving  for fun
+
+// function addUp(num) {
+// 	if(num > 0 && num <= 1000){
+// 		let sum = 0;
+// 			for(let i = 1; i <= num; i++) {
+// 				sum += i;
+// 			}
+// 		return sum;
+// 	}
+// 	else return;
+// }
+
+// console.log(addUp(4));
