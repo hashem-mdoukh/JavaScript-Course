@@ -1603,6 +1603,7 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 
 // console.log(addUp(4));
 
+
 // --------------------Object---------------------Introductio
 
 // let user = {
@@ -1893,3 +1894,4 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // console.log(myFavGames);
 
 //  ----------------------------------What Is DOM And Select Elements
+
