@@ -103,41 +103,41 @@
 
 // ------------------Number In Js And Method
 
-let num = 3;
+// let num = 3;
 
-console.log(Number(num) + Number(num));
-console.log(num + num);
-console.log(+true * num + +true * num);
-console.log(num ** 2 - num);
+// console.log(Number(num) + Number(num));
+// console.log(num + num);
+// console.log(+true * num + +true * num);
+// console.log(num ** 2 - num);
 
 // let d ="-100"
 // let e = "20"
 
-console.log(-"-100" * "20");
+// console.log(-"-100" * "20");
 
-console.log(100_000);
-console.log(1e5);
-console.log(5e4 + 5e4);
-console.log(10 ** 5);
-console.log(10 * 10 * 10 * 10 * 10);
-console.log(100000.0);
-console.log(Number(100000));
-console.log(1_00_000);
-console.log(3e4 + 7e4);
-console.log(2e4 * 5);
-console.log(1e6 - 9e5);
-console.log(100000);
-console.log(3e2 ** 2 + 1e4);
+// console.log(100_000);
+// console.log(1e5);
+// console.log(5e4 + 5e4);
+// console.log(10 ** 5);
+// console.log(10 * 10 * 10 * 10 * 10);
+// console.log(100000.0);
+// console.log(Number(100000));
+// console.log(1_00_000);
+// console.log(3e4 + 7e4);
+// console.log(2e4 * 5);
+// console.log(1e6 - 9e5);
+// console.log(100000);
+// console.log(3e2 ** 2 + 1e4);
 
-let myVar = "100.56789 Views";
-console.log(parseInt(myVar));
-console.log(parseFloat(myVar));
+// let myVar = "100.56789 Views";
+// console.log(parseInt(myVar));
+// console.log(parseFloat(myVar));
 
-let flt = 10.4;
+// let flt = 10.4;
 
-console.log(Math.round(flt));
-console.log(Math.floor(flt));
-console.log(Math.trunc(flt));
+// console.log(Math.round(flt));
+// console.log(Math.floor(flt));
+// console.log(Math.trunc(flt));
 
 //----------------- String And Method
 
@@ -177,18 +177,18 @@ console.log(Math.trunc(flt));
 
 // console.log(a.includes("Web"))
 
-let userName = "Elzero";
+// let userName = "Elzero";
 
-console.log(userName[0].toLowerCase());
-console.log(userName.charAt(0).toLowerCase());
-console.log(userName.slice(0, 1).toLowerCase());
-console.log(userName.slice(-6, -5).toLowerCase());
-console.log(userName.substring(0, 1).toLowerCase());
-console.log(userName.substr(0, 1).toLowerCase());
-console.log(
-  userName.substring(userName.length - 6, userName.length - 5).toLowerCase()
-);
-console.log(userName[0].repeat(3).toLowerCase());
+// console.log(userName[0].toLowerCase());
+// console.log(userName.charAt(0).toLowerCase());
+// console.log(userName.slice(0, 1).toLowerCase());
+// console.log(userName.slice(-6, -5).toLowerCase());
+// console.log(userName.substring(0, 1).toLowerCase());
+// console.log(userName.substr(0, 1).toLowerCase());
+// console.log(
+//   userName.substring(userName.length - 6, userName.length - 5).toLowerCase()
+// );
+// console.log(userName[0].repeat(3).toLowerCase());
 
 // let word = "Elzero";
 // let letterZ = "z";
@@ -705,15 +705,21 @@ console.log(userName[0].repeat(3).toLowerCase());
 // let str = '';
 
 // for (start; start < swappedName.length; start++) {
-//     if (swappedName[start] === swappedName[start].toLowerCase()) {
-//         str += swappedName[start].toUpperCase()
-//     }
-//     else {
-//         str += swappedName[start].toLowerCase()
-//     }
+//   if (swappedName[start] === swappedName[start].toLowerCase()) {
+//       str += swappedName[start].toUpperCase()
+//   }
+//   else {
+//       str += swappedName[start].toLowerCase()
+//   }
 // }
 
 // console.log(str);
+
+// Advancde Solution by used Map And Arrow Function
+
+// let swp = swappedName.split("").map( Element => Element === Element.toLowerCase() ? Element.toUpperCase() : Element.toLowerCase()).join("")
+
+// console.log(swp)
 
 // Assignments Number Seven To For ----------- loop
 
@@ -1180,11 +1186,11 @@ console.log(userName[0].repeat(3).toLowerCase());
 
 // -----------------------Scope - Lexical(Static)
 
-let a = 30
+// let a = 30;
 
 // function parent() {
 //   let a = 10;
-  
+
 //   function child() {
 //     // Just For Try
 //     // let a = 20
@@ -1216,7 +1222,7 @@ let a = 30
 // }
 // var a=1;
 // console.log(a);
-// one();  
+// one();
 
 // function one(){
 
@@ -1233,3 +1239,657 @@ let a = 30
 // console.log(a);
 // one();
 
+// -------------------Higher Order Functions------  Map
+
+// -------------Note Important
+
+// - Map
+//   --- method creates a new array
+//   --- populated with the results of calling a provided function on every element
+//   --- in the calling array.
+
+//   Syntax map(callBackFunction(Element, Index, Array) { }, thisArg)
+//   - Element => The current element being processed in the array.
+//   - Index => The index of the current element being processed in the array.
+//   - Array => The Current Array
+
+//   Notes
+//   - Map Return A New Array
+
+//   Examples
+//   - Anonymous Function
+//   - Named Function
+
+// let myNums = [1, 2, 3, 4, 5, 6];
+
+// let newArray = [];
+
+// for (let i = 0; i < myNums.length; i++) {
+//   newArray.push(myNums[i] + myNums[i]);
+// }
+
+// console.log(newArray);
+
+// Same Idea With Map
+
+// Anonymous Function
+
+// let addSelf = myNums.map(function (element, index ,arr) {
+//   console.log(`Current Element => ${element}`);
+//   console.log(`Current Index => ${index}`);
+//   console.log(`Array => ${arr}`);
+//   console.log(`This => ${this}`);
+//   return element + element
+// }, 10)
+
+// Arrwo Function
+
+// let addSelf = myNums.map((element) => element + element)
+
+// console.log(addSelf);
+
+// Named Function
+
+// function addition(ele) {
+//   return ele + ele
+// }
+
+// let add = myNums.map(addition)
+
+// console.log(add);
+
+//  ------------------Higher Order Functions----------Map Practice
+
+// Map
+// - Swap Cases
+// - Inverted Numbers
+// - Ignore Boolean Value
+
+// let swappingCases = "elZERo";
+// let invertedNumbers = [1, -10, -20, 15, 100, -30];
+// let ignoreNumbers = "Elz123er4o";
+
+// let sw = swappingCases.split("").map(function (ele) {
+//   return ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase();
+// }).join("");
+
+// console.log(sw);
+
+// let inv = invertedNumbers.map( function (ele) {
+//   return -ele
+// })
+
+// console.log(inv);
+
+// let ign = ignoreNumbers.split("").map( function(ele) {
+//   return isNaN(parseInt(ele)) ? ele : ""
+// }).join("")
+
+// console.log(ign);
+
+// Arrow Function Version
+
+// let ign = ignoreNumbers.split("").map( (ele) => isNaN(parseInt(ele)) ? ele : ""
+// ).join("")
+
+// console.log(ign);
+
+//  ------------------Higher Order Functions-------Filter
+
+// - Filter
+// --- method creates a new array
+// --- with all elements that pass the test implemented by the provided function.
+
+// Syntax filter(callBackFunction(Element, Index, Array) { }, thisArg)
+// - Element => The current element being processed in the array.
+// - Index => The index of the current element being processed in the array.
+// - Array => The Current Array
+
+// Get Friends With Name Starts With A
+
+// let friends = ["Ahmed", "Sameh", "Sayed", "Asmaa", "Amgad", "Israa"];
+
+// let filterdFrinends = friends.filter(function (el) {
+//   return el.startsWith("A") ? true : false;
+// });
+
+// console.log(filterdFrinends);
+
+// // Get Even Numbers Only
+
+// let numbers = [11, 20, 2, 5, 17, 10];
+
+// let evenNumbers = numbers.filter(function (el) {
+//   return el % 2 === 0;
+// });
+
+// console.log(evenNumbers);
+
+// Test Map vs filter
+
+// let addMap = numbers.map( function ( el) {
+//   return el + el
+// })
+
+// console.log(addMap);
+
+// let addFiltre = numbers.filter( function ( el) {
+//   return el + el
+// })
+
+// console.log(addFiltre);
+
+// ----------------Higher Order Functions---------------Filter Practice
+
+// Filter Words More Than 4 Characters
+// let sentence = "I Love Foood Code Too Playing Much";
+
+// let smallWords = sentence.split(" ").filter( function (el) {
+//   return el.length <= 4
+// }).join(" ")
+
+// console.log(smallWords);
+
+// Ignore Numbers
+// let ignoreNumbers = "Elz123er4o";
+
+// let ign = ignoreNumbers.split("").filter(function (ele) {
+//   return isNaN(parseInt(ele));
+// }).join("");
+
+// console.log(ign);
+
+// Filter Strings + Multiply
+// let mix = "A13BS2ZX";
+
+// let mixedContent = mix.split("").filter(function (ele) {
+//   return !isNaN(parseInt(ele))
+// }).map(function (ele) {
+//   return ele * ele
+// })
+// .join(" ")
+
+// console.log(mixedContent);
+
+//  -----------------Higher Order Functions-------------Reduce
+
+/*
+- Reduce
+--- method executes a reducer function on each element of the array,
+--- resulting in a single output value.
+
+Syntax
+reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, initialValue)
+- Accumulator => the accumulated value previously returned in the last invocation
+- Current Val => The current element being processed in the array
+- Index => The index of the current element being processed in the array.
+---------- Starts from index 0 if an initialValue is provided.
+---------- Otherwise, it starts from index 1.
+- Array => The Current Array
+*/
+
+// let nums = [10, 20, 15, 30];
+
+// let add = nums.reduce(function (acc, current, index, arr) {
+//   console.log(`This Is Accumulator ${acc}`);
+//   console.log(`This Is current ${current}`);
+//   console.log(`This Is index ${index}`);
+//   console.log(acc + current);
+//   console.log(`###################`);
+//   return acc +current
+// })
+
+// console.log(add);
+
+//  -------------------Higher Order Functions------------Reduce Practic
+
+// let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test", "Propaganda_Two"];
+
+// let ckeck = theBiggest.reduce(function (acc, current, index, arr) {
+//   console.log(`This Is Accumulator ${acc}`);
+//   console.log(`This Is current ${current}`);
+//   console.log(acc .length > current.length ? acc : current    );
+//   console.log(`###################`);
+//   return acc .length > current.length ? acc : current
+// })
+
+// console.log(ckeck);
+
+// let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+
+// let finalString = removeChars.filter( function ( ele) {
+//   return !ele.startsWith("@")
+// }).reduce( function (acc, current) {
+//   return `${acc}${current}`
+// })
+
+// console.log(finalString);
+
+//  ----------------Higher Order Functions----------ForEach And Practice
+
+/*
+  - forEach
+  --- method executes a provided function once for each array element.
+
+  Syntax forEach(callBackFunction(Element, Index, Array) { }, thisArg)
+  - Element => The current element being processed in the array.
+  - Index => The index of the current element being processed in the array.
+  - Array - The Current Array
+
+  Note
+  - Doesnt Return Anything [Undefined]
+  - Break Will Not Break The Loop
+*/
+
+// let allLis = document.querySelectorAll("ul li");
+// let allDivs = document.querySelectorAll(".content div");
+
+// allLis.forEach(function (ele) {
+//   ele.onclick = function () {
+//     // Remove Active Class form All Elements
+//     allLis.forEach(function (ele) {
+//       ele.classList.remove("active");
+//     });
+//     // Add Active Class To This Element
+//     this.classList.add("active");
+//     // Hide All Divs
+//     allDivs.forEach(function (ele) {
+//       ele.style.display = "none";
+//     });
+//   };
+// });
+
+// Higher Order Function Challenge
+
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+// let solution = myString.split("").filter( (ele) => isNaN(parseInt(ele)))
+//                        .map( function (ele, index, array) {
+//                         for (let i = index + true; i < array.length; i++) {
+//                           if (array[i] == ele) {
+//                             break
+//                           }else {
+//                             return ele
+//                           }
+//                         }
+//                        } )
+//                       .reduce( (acc, current) => acc + current)
+
+// console.log(solution);
+
+// Assignment Number One
+
+// let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+// let mixed = mix.map(function (ele) {
+//   return isNaN(parseInt(ele)) ? ele : ""
+// }).reduce(function (acc, current) {
+//   return acc + current
+// })
+
+// console.log(mixed);
+
+// Solution By Arrow Function
+
+// let mixedTwo = mix.map( ele => isNaN(parseInt(ele)) ? ele : "" )
+//                   .reduce( (acc, current) => acc + current)
+
+// console.log(mixedTwo);
+
+// Assignment Number Two
+
+// let myString = "EElllzzzzzzzeroo";
+
+// let str = myString.split("").filter( function (ele,index,array) {
+//   for(let x = index+1; x <= array.length; x++){
+//     if (array[x] === ele){
+//       break;
+//     }
+//     else{
+//       return ele
+//     }
+//   }
+
+// }).join("")
+
+// console.log(str);
+
+// Assignment Number Three
+
+// let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+// function array (arr) {
+//   for(let x = 0; x < arr.length; x++){
+//     if(Array.isArray(arr[x])){
+//       array(...arr[x])
+//     }
+//   }
+// }
+
+// array(["E", "l", "z", ["e", "r"], "o"])
+
+// Assignmrnt Number Four
+
+// let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+// let num = numsAndStrings.filter( function (el) {
+//   return !isNaN(parseInt(el))
+// }).map( ele => -ele)
+
+// console.log(num);
+
+// Assignment Number Five
+
+// let nums = [2, 12, 11, 5, 10, 1, 99];
+
+// let result = nums.reduce( function (acc , current) {
+//  current % 2 === 0 ? acc * current : acc + current
+// } , 1)
+
+// console.log(result);
+
+// Assignment simple problem solving  for fun
+
+// function addUp(num) {
+// 	if(num > 0 && num <= 1000){
+// 		let sum = 0;
+// 			for(let i = 1; i <= num; i++) {
+// 				sum += i;
+// 			}
+// 		return sum;
+// 	}
+// 	else return;
+// }
+
+// console.log(addUp(4));
+
+// --------------------Object---------------------Introductio
+
+// let user = {
+//   // Properties
+//   theName: "Hashem",
+//   theAge: 19,
+
+//   // Methods
+//   sayHello: function (thename) {
+//     console.log(`Hello ${thename}`);
+//   }
+// };
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// user.sayHello("Osama");
+
+// --------------------------Dot Notation vs Bracket Notation
+
+// let user = {
+//   theName: "Hashem",
+//   "countey of": "Gaza",
+//   100: "Number",
+// };
+
+// console.log(user.theName);
+// console.log(user["theName"]);
+// console.log(user["countey of"]);
+// console.log(user[100]);
+
+// let myVar = "Country";
+
+// let user = {
+//   theName: "Hashem",
+//   Country: "Gaza",
+// };
+
+// console.log(user.theName);
+// console.log(user.Country);
+// console.log(user.myVar);
+// console.log(user[myVar]);
+
+// ---------------------Nested Object And Advanced Trainings
+
+// let user = {
+//   name: "Hashem",
+//   age: 19,
+//   skills: ["HTML", "CSS", "JS"],
+//   available: false,
+//   addresses: {
+//     Ksa: "Riyadh",
+//     egypt: {
+//       one: "Cairo",
+//       two: "Giza",
+//     },
+//   },
+//   ckeckAv: () => {
+//     if (user.available === true) {
+//       return `Free For Work`;
+//     } else {
+//       return`Not Free`;
+//     }
+//   },
+// };
+
+// console.log(user.name);
+// console.log(user.age);
+// console.log(user.skills);
+// console.log(user.skills.join(" | "));
+// console.log(user.skills[2]); // Access With Index
+// console.log(user.addresses.egypt.one);
+// console.log(user["addresses"].egypt.one);
+// console.log(user["addresses"]["egypt"].one);
+// console.log(user.ckeckAv());
+
+//  -------------------------------Create Object With New Keyword
+
+// let user = new Object({
+//   age: 20
+// })
+
+// console.log(user);
+
+// user.age = 19;
+// user["country"] = "Gaza"
+
+// user.sayHello = function () {
+//   return `Hello`9
+// }
+
+// console.log(user);
+// console.log(user.age);
+// console.log(user.country);
+// console.log(user.sayHello());
+
+// ------------------------------------------------This Keywor
+
+/*
+  Function this Keyword
+  - this Introduction
+  - this Inside Object Method
+  --- When a function is called as a method of an object,
+  --- its this is set to the object the method is called on.
+  - Global Object
+  - Test Variables With Window And This
+  - Global Context
+  - Function Context
+
+  Search
+  - Strict Mode
+*/
+
+// console.log(this);
+// console.log(this === window);
+
+// myVar = 100;
+
+// console.log(window.myVar);
+// console.log(this.myVar);
+
+// function sayHello() {
+//   console.log(this);
+//   return this;
+// }
+
+// sayHello();
+
+// console.log(sayHello() === window);
+
+// document.getElementById("cl").onclick = function () {
+//   console.log(this);
+// };
+
+// let user = {
+//   age: 19,
+//   ageInDay: function () {
+//     console.log(this);
+//     return this.age * 365;
+//   },
+// };
+
+// console.log(user.age);
+// console.log(user.ageInDay());
+
+// --------------------------------Create Object With Create Method
+
+// let user = {
+//   age: 19,
+//   doubleAge: function () {
+//     return this.age * 2;
+//   },
+// };
+
+// console.log(user);
+// console.log(user.age);
+// console.log(user.doubleAge());
+
+// let obj = Object.create({});
+
+// obj.a = 100;
+
+// console.log(obj);
+
+// let CopyObj = Object.create(user);
+
+// CopyObj.age = 30;
+
+// console.log(CopyObj);
+// console.log(CopyObj.age);
+// console.log(CopyObj.doubleAge());
+
+//  ---------------------------------Create Object With Assign Method
+
+// let obj1 = {
+//   prop1: 1,
+//   meth1: function () {
+//     return this.prop1;
+//   },
+// };
+
+// let obj2 = {
+//   prop2: 2,
+//   meth2: function () {
+//     return this.prop2;
+//   },
+// };
+
+// let targetObject = {
+//   prop1: 100,
+//   prop3: 3,
+// };
+
+// let finalObject = Object.assign(targetObject, obj1, obj2);
+
+// finalObject.prop4 = 4;
+
+// console.log(finalObject);
+
+// let newObject = Object.assign({}, obj1, { prop5: 5, prop6: 6 });
+
+// console.log(newObject);
+
+// Assignment Number One
+
+// let member = {
+//   name: "Elzero",
+//   age: 38,
+//   country: "Egypt",
+//   fullDetails: () => {
+//     return `My Name Is ${member.name}, My Age Is ${member.age}, I Live In ${member.country}`
+//   }
+// }
+
+// console.log(member.name);
+// console.log(member.age);
+// console.log(member.country);
+// console.log(member.fullDetails());
+
+// Assignment Number Two
+
+
+
+// Assignment Number Three
+
+// let a = 1;
+
+// let threeNums = {
+//   b: 2,
+//   c: 3,
+//   d: 4,
+// };
+
+// let twoNums = {
+//   e: 5,
+//   f: 6,
+// };
+
+// let finalObject = Object.assign({}, {a: 1},threeNums, twoNums)
+
+// console.log(finalObject);
+
+// Assignment Number Four
+
+// The Object To Work With
+// let myFavGames = {
+//   "Trinity Universe": {
+//     publisher: "NIS America",
+//     price: 40,
+//   },
+//   "Titan Quest": {
+//     publisher: "THQ",
+//     bestThree: {
+//       one: "Immortal Throne",
+//       two: "Ragnarök",
+//       three: "Atlantis",
+//     },
+//     price: 50,
+//   },
+//   YS: {
+//     publisher: "Falcom",
+//     bestThree: {
+//       one: "Oath in Felghana",
+//       two: "Ark Of Napishtim",
+//       three: "origin",
+//     },
+//     price: 40,
+//   },
+// };
+
+// Code One => How To Get Object Length ?
+// let objectLength = 
+
+// for (let i = 0; i < objectLength; i++) {
+//   console.log(`The Game Name Is `);
+//   console.log(`The Publisher Is `);
+//   console.log(`The Price Is `);
+
+//   // Check If Nested Object Has Property (bestThree)
+//   // if (???????) {
+//   //   console.log("- Game Has Releases");
+//   //   console.log(`First => ???????`);
+//   //   console.log(`Second => ???????`);
+//   //   console.log(`Third => ???????`);
+//   // }
+//   console.log("#".repeat(20));
+// }
+
+// console.log(myFavGames);
+
+//  ----------------------------------What Is DOM And Select Elements
