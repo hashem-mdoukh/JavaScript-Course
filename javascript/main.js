@@ -1506,7 +1506,7 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // let solution = myString.split("").filter( (ele) => isNaN(parseInt(ele)))
 //                        .map( function (ele, index, array) {
 //                         for (let i = index + true; i < array.length; i++) {
-//                           if (array[i] == ele) {
+//                           if (array[i] === ele ) {
 //                             break
 //                           }else {
 //                             return ele
@@ -1540,7 +1540,7 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 
 // let myString = "EElllzzzzzzzeroo";
 
-// let str = myString.split("").filter( function (ele,index,array) {
+//  let str = myString.split("").filter( function (ele,index,array) {
 //   for(let x = index+1; x <= array.length; x++){
 //     if (array[x] === ele){
 //       break;
@@ -1557,16 +1557,12 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // Assignment Number Three
 
 // let myArray = ["E", "l", "z", ["e", "r"], "o"];
+// let returnElzero = myArray.reduce(function(acc,curr){
+//   return acc.concat(curr)
+// },[]).join("");
 
-// function array (arr) {
-//   for(let x = 0; x < arr.length; x++){
-//     if(Array.isArray(arr[x])){
-//       array(...arr[x])
-//     }
-//   }
-// }
-
-// array(["E", "l", "z", ["e", "r"], "o"])
+// console.log(returnElzero);
+// // Elzero
 
 // Assignmrnt Number Four
 
@@ -1602,7 +1598,6 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // }
 
 // console.log(addUp(4));
-
 
 // --------------------Object---------------------Introductio
 
@@ -1823,8 +1818,33 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // console.log(member.fullDetails());
 
 // Assignment Number Two
+// let objMethodOne = {
+//   property: "Method One"
+//   }
 
+//   console.log(objMethodOne.property); // "Method One"
 
+//   // Method Two
+//   // Create Your Object Here
+//   let objMethodTwo = new Object({
+//     property : "Method Two"
+//   })
+
+//   console.log(objMethodTwo.property); // "Method Two"
+
+//   // Method Three
+//   // Create Your Object Here
+//   let objMethodThree = Object.create(objMethodTwo)
+//   objMethodThree.property = "Method Three";
+
+//   console.log(objMethodThree.property); // "Method Three"
+
+//   // Method Four
+//   // Create Your Object Here
+//   let objMethodFour = Object.assign(objMethodThree)
+//   objMethodFour.property = "Method Four";
+
+//   console.log(objMethodFour.property); // "Method Four"
 
 // Assignment Number Three
 
@@ -1841,7 +1861,7 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 //   f: 6,
 // };
 
-// let finalObject = Object.assign({}, {a: 1},threeNums, twoNums)
+// let finalObject = Object.assign({ a }, threeNums, twoNums);
 
 // console.log(finalObject);
 
@@ -1874,24 +1894,238 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // };
 
 // Code One => How To Get Object Length ?
-// let objectLength = 
+// let objectLength = Object.keys(myFavGames).length
 
 // for (let i = 0; i < objectLength; i++) {
-//   console.log(`The Game Name Is `);
-//   console.log(`The Publisher Is `);
-//   console.log(`The Price Is `);
+//   let name = Object.keys(myFavGames)[i]
+
+//   console.log(`The Game Name Is ${name}`);
+//   console.log(`The Publisher Is ${Object.values(myFavGames)[i].publisher}`);
+//   console.log(`The Price Is ${Object.values(myFavGames)[i].price}`);
 
 //   // Check If Nested Object Has Property (bestThree)
-//   // if (???????) {
-//   //   console.log("- Game Has Releases");
-//   //   console.log(`First => ???????`);
-//   //   console.log(`Second => ???????`);
-//   //   console.log(`Third => ???????`);
-//   // }
+//   if (myFavGames[name].hasOwnProperty("bestThree")) {
+//     console.log("- Game Has Releases");
+//     console.log(`First => ${myFavGames[name].bestThree.one}`);
+//     console.log(`Second => ${myFavGames[name].bestThree.two}`);
+//     console.log(`Third => ${myFavGames[name].bestThree.three}`);
+//   }
 //   console.log("#".repeat(20));
 // }
 
 // console.log(myFavGames);
 
 //  ----------------------------------What Is DOM And Select Elements
+
+// let myIdElement = document.getElementById("my-div");
+// let myTagElements = document.getElementsByTagName("p");
+// let myClassElement = document.getElementsByClassName("my-span");
+// let myQueryElement = document.querySelector(".my-span");
+// let myQueryAllElement = document.querySelectorAll(".my-span");
+
+// console.log(myIdElement);
+// console.log(myTagElements[1]);
+// console.log(myClassElement[1]);
+// console.log(myQueryElement);
+// console.log(myQueryAllElement[0]);
+
+// myTagElements[1].innerHTML = "Test";
+
+// console.log(document.title);
+// console.log(document.body);
+// console.log(document.forms[0].One.value);
+// console.log(document.links[1].href);
+
+// ----------------------------------Get Set Elements Content And Attributes
+
+// let myElement = document.querySelector(".js")
+
+// console.log(myElement.innerHTML);
+// console.log(myElement.textContent);
+
+// myElement.innerHTML = "Text Form <span>Main.js</span> File"
+// myElement.textContent = "Text Form <span>Main.js</span> File"
+
+// document.images[0].src = "https://google.com"
+// document.images[0].alt = "alt"
+// document.images[0].title = "picture"
+// document.images[0].id = "pic"
+// document.images[0].className = "img"
+
+// let myLink = document.querySelector(".link")
+
+// console.log(myLink.getAttribute("class"));
+// console.log(myLink.getAttribute("href"));
+
+// myLink.setAttribute("href", "https://twitter.com")
+// myLink.setAttribute("title", "Twitter")
+
+// ------------------------------------Check Attributes And Examples
+
+/*
+  DOM [Check Attributes]
+  - Element.attributes
+  - Element.hasAttribute
+  - Element.hasAttributes
+  - Element.removeAttribute
+*/
+
+// console.log(document.getElementsByTagName("p")[0].attributes);
+
+// let myP = document.getElementsByTagName("p")[0];
+
+// if (myP.hasAttribute("data-src")) {
+//   if(myP.getAttribute("data-src") === "") {
+//     myP.removeAttribute("data-src")
+//   } else {
+//     myP.setAttribute("data-src", "New Value")
+//   }
+// } else {
+//   console.log("Not Found");
+// }
+
+// if (myP.hasAttributes()) {
+//   console.log("has Attributes");
+// }
+
+// if (document.getElementsByTagName("div")[0].hasAttributes()) {
+//   console.log("has Attributes");
+// } else {
+//   console.log("Hasnt Attributes");
+// }
+
+// ------------------------------------------Create And Append Elements
+
+/*
+  DOM [Create Elements]
+  - createElement
+  - createComment
+  - createTextNode
+  - createAttribute
+  - appendChild
+*/
+
+// let myElement = document.createElement("div");
+// let myAttr = document.createAttribute("data-custom");
+// let myText = document.createTextNode("product One");
+// let myComment = document.createComment("This Is Div")
+
+// myElement.className = "product";
+// myElement.setAttributeNode(myAttr);
+// myElement.setAttribute("data-test", "Testing");
+
+// // Append Comment To Element
+// myElement.appendChild(myComment)
+
+// // Append Text To Element
+// myElement.appendChild(myText);
+
+// // Append Element To Body
+// document.body.appendChild(myElement)
+
+//  --------------------------Product With Title And Description Practice
+
+// let myProduct = document.createElement("div")
+// let myHead = document.createElement("h2")
+// let myPara =document.createElement("p")
+
+// let myHeadText = document.createTextNode("Product Title")
+// let myParaText = document.createTextNode("Product Description")
+
+// // Add Heading Text
+// myHead.appendChild(myHeadText)
+
+// // Add Paragraph Text
+// myPara.appendChild(myParaText)
+
+// myProduct.className = "proudct"
+// myProduct.appendChild(myHead)
+// myProduct.appendChild(myPara)
+
+// document.body.appendChild(myProduct)
+
+//  --------------------------------------Deal With Children's
+
+/*
+  DOM [Deal With Childrens]
+  - children  get Element Number 
+  - childNodes get Element And Text And Comment (Evry Thing)
+  - firstChild
+  - lastChild
+  - firstElementChild
+  - lastElementChild
+*/
+
+// let myElement = document.querySelector("div")
+
+// console.log(myElement);
+// console.log(myElement.children);
+// console.log(myElement.children[0]);
+// console.log(myElement.childNodes);
+// console.log(myElement.childNodes[0]);
+
+// console.log(myElement.firstChild);
+// console.log(myElement.lastChild);
+
+// console.log(myElement.firstElementChild);
+// console.log(myElement.lastElementChild);
+
+// myElement.children[0].innerHTML = "Welcome To Our <span>Store</span>"
+
+// ---------------------------------------------DOM Events
+
+/*
+  DOM [Events]
+  - Use Events On HTML
+  - Use Events On JS
+  --- onclick
+  --- oncontextmenu
+  --- onmouseenter
+  --- onmouseleave
+
+  --- onload
+  --- onscroll
+  --- onresize
+
+  --- onfocus
+  --- onblur
+  --- onsubmit
+*/
+
+// let myBtn = document.getElementById("btn");
+
+// myBtn.onclick = function () {
+//   console.log("Wllecome");
+// };
+
+// window.onscroll = function () {
+//   console.log("scroll");
+// }
+
+//  ------------------------------Validate Form And Prevent Default
+
+// let userInput = document.querySelector("[name='Username']");
+// let ageInput = document.querySelector("[name='Age']");
+
+// document.forms[0].onsubmit = function (e) {
+//   let userValid = false;
+//   let ageValid = false;
+
+//   if (userInput.value !== "" && userInput.value.length <= 10) {
+//     userValid = true;
+//   }
+
+//   if (ageInput.value !== "") {
+//     ageValid = true;
+//   }
+
+//   if (userValid === false || ageValid === false) {
+//     e.preventDefault();
+//   }
+// };
+
+// document.links[0].onclick = function (Event) {
+//   console.log(Event);
+//   Event.preventDefault();
+// };
 
