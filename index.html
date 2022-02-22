@@ -5,9 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>learn javascript</title>
+    <!-- <script>
+      // run this function when the document is loaded
+      window.onload = function() {
+
+        // create a couple of elements in an otherwise empty HTML page
+        const heading = document.createElement("h1");
+        const heading_text = document.createTextNode("Big Head!");
+        heading.appendChild(heading_text);
+        document.body.appendChild(heading);
+     }
+   </script> -->
+
+    <!-- Enumerating elements attributes  -->
+    <!-- <script type="text/javascript">
+      function listAttributes() {
+        var paragraph = document.getElementById("paragraph");
+        var result = document.getElementById("result");
+
+        // First, let's verify that the paragraph has some attributes
+        if (paragraph.hasAttributes()) {
+          var attrs = paragraph.attributes;
+          var output = "";
+          for (var i = attrs.length - 1; i >= 0; i--) {
+            output += attrs[i].name + "->" + attrs[i].value;
+          }
+          result.value = output;
+        } else {
+          result.value = "No attributes to show";
+        }
+      }
+    </script> -->
   </head>
-  <body>  
-    <button id="show">Show</button>
+  <body>
+    <!-- <button id="show">Show</button>
 
     <ul>
       <li class="active">One</li>
@@ -21,7 +52,72 @@
       <div>Div Three</div>
     </div>
 
-    <button id="cl">Click</button>
+    <button id="cl">Click</button> -->
+
+    <!-- What Is DOM And Select Elements -->
+
+    <!--  
+    <span class="my-span special">My Span 1</span>
+    <span class="my-span">My Span 2</span>
+    <p>Hello Paragraph 1</p>
+    <p>Hello Paragraph 2</p>
+    <div id="my-div">Hello Div</div>
+    <form action="">
+      <input type="text" name="One" value="Hello" />
+    </form>
+    <form action="">
+      <input type="text" name="Two" value="Hello" />
+    </form>
+    <a href="https://google.com">Google</a>
+    <a href="https://facebook.com">FaceBook</a> -->
+
+    <!-- Get Set Elements Content And Attributes  -->
+
+    <!-- <div class="js">javascript <span>Div</span> &lt;span&gt;</div>
+    <img src="" alt="">
+    <a class="link" href="#">Google</a> -->
+
+    <!-- Check Attributes And Examples -->
+
+    <!-- <div>Div</div>
+    <p class="para" title="paragraph" data-src="Testing">Paragraph</p> -->
+
+    <!-- Deal With Children's -->
+    <div>
+      Hello Div
+      <p>Hello Div</p>
+      <span>Hello Div</span>
+      <!-- Comment -->
+      Hello
+    </div>
+
+    <!-- Enumerating elements attributes  -->
+
+    <!-- <p id="paragraph" style="color: red;">Sample Paragraph</p>
+    <form action="">
+     <p>
+       <input type="button" value="Show first attribute name and value"
+         onclick="listAttributes();">
+       <input id="result" type="text" value="">
+     </p>
+    </form> -->
+
+    <!-- DOM Evets -->
+    <!-- <button id="btn">Button</button>
+    <hr />
+    <form action="">
+      <input type="text" />
+      <input type="submit" value="Submit Data" />
+    </form> -->
+
+    <!-- Validate Form And Prevent Default -->
+
+    <!-- <form action="">
+      <input type="text" name="Username" placeholder="Max 10 Chars Only" />
+      <input type="text" name="Age" placeholder="Cant Be Empty" />
+      <input type="submit" value="Submit Data" />
+    </form>
+    <a href="https://google.com">Google</a> -->
     <script src="javascript/main.js"></script>
   </body>
 </html>
