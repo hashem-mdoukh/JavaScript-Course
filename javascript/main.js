@@ -2129,3 +2129,262 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 //   Event.preventDefault();
 // };
 
+// Assignment Number Two
+
+// let mySrc = document.getElementById("img");
+// let myImg;
+
+// for (let i = 0; i < 10; i++) {
+//   myImg = document.createElement("img");
+//   mySrc.appendChild(myImg);
+
+//   myImg.src = "https://elzero.org/wp-content/themes/elzero/imgs/logo.png";
+//   myImg.alt = "Elzero Logo";
+// }
+
+// Anthor Solution Assignmrnt Number Two By => ForEach
+
+// let images = document.querySelectorAll("img"); // [img,img,img,img]
+
+// images.forEach((item, index) =>{
+//   item.src = "https://elzero.org/wp-content/themes/elzero/imgs/logo.png"
+//   item.alt = "Elzero Logo"
+//   item.title = "Elzero Logo"
+//   item.setAttribute("order", ++index)
+// })
+
+// function even (arr) {
+//   for(let i = 0; i < arr.length; i++)
+//   {
+//     if(arr[i].getAttribute("order") % 2 == 0){
+//       arr[i].style.filter = "invert(1)"
+//     }
+//   }
+// }
+
+//  ----------------------------------Event Simulation - Click Focus Blur
+
+// click
+// focus
+// blur
+
+// let one = document.querySelector(".one");
+// let two = document.querySelector(".two");
+
+// window.onload = function () {
+//   two.focus();
+// };
+
+// one.onblur = function () {
+//   document.links[0].click();
+// };
+
+//  ---------------------------------Class List Object And Methods
+
+/*
+  DOM [Class List]
+  - classList
+  --- length
+  --- contains
+  --- item(index)
+  --- add
+  --- remove
+  --- toggle // Make Add And remove 
+*/
+
+// let element = document.getElementById("my-div");
+
+// console.log(element.classList);
+// console.log(typeof element.classList);
+// console.log(element.classList.contains("hashem"));
+// console.log(element.classList.contains("show"));
+// console.log(element.classList.item("3"));
+
+// element.onclick = function () {
+//   this.classList.toggle("active")
+// }
+
+// ---------------------CSS Styling And Stylesheets
+
+// - Style
+// - CssText
+// - removeProperty(PropertyName) [Inline,  Stylesheet]
+// - setProperty(Property, value, priority)
+
+// let element = document.getElementById("my-div");
+
+// element.style.color = "white";
+// element.style.backgroundColor = "red";
+
+// element.style.cssText = "color: green; opacity: .9;";
+
+// element.style.removeProperty("color");
+// element.style.setProperty("font-size", "40px", "important");
+
+// document.styleSheets[0].rules[0].style.removeProperty("line-height");
+// document.styleSheets[0].rules[0].style.setProperty("background-color", "green");
+
+// ----------------------------------Before, After, Prepend, Append, Remove
+
+// let element = document.getElementById("my-div");
+// let createdP = document.createElement("p");
+
+// let textP = document.createTextNode("HI World");
+
+// createdP.appendChild(textP);
+
+// element.after(createdP);
+// element.prepend(createdP);
+
+// element.before("Hello From Before Js Course");
+// element.after("Hello From After Js Course");
+
+// element.remove();
+
+// ------------------------------------DOM Traversing
+
+/*
+  DOM [Traversing]
+  - nextSibling
+  - previousSibling
+  - nextElementSibling
+  - previousElementSibling
+  - parentElement
+*/
+
+// let span = document.querySelector(".two");
+
+// console.log(span.parentElement);
+
+// span.onclick = function () {
+//   span.parentElement.remove();
+// };
+
+//  -------------------------------DOM Cloning
+
+// let myP = document.querySelector("p").cloneNode(true);
+// let myDiv = document.querySelector("div");
+
+// myP.id = `${myP.id}-clone`;
+
+// myDiv.appendChild(myP);
+
+// ---------------------------------------AddEventListener
+/*
+  DOM [Add Event Listener]
+  - addEventListener
+  - Use Without On
+  - Attach Multiple Events
+  - Error Test
+
+  Search
+  - Capture & Bubbling JavaScript
+  - removeEventListener
+*/
+
+// let myP = document.querySelector("p");
+
+// myP.onclick = one;
+// myP.onclick = two;
+
+// function one() {
+//   console.log("Message Form OnClick One");
+// }
+
+// function two() {
+//   console.log("Message Form OnClick Two");
+// }
+
+// window.onload = "Hashem";
+
+// myP.addEventListener("click", one);
+// myP.addEventListener("click", two);
+
+// myP.addEventListener("click", "Hashem");
+
+// myP.onclick = function () {
+//   let newP = myP.cloneNode(true);
+//   newP.className = "Clone";
+//   document.body.appendChild(newP);
+// };
+
+// let cloned = document.querySelector(".clone");
+
+// cloned.onclick = function () {
+//   console.log("IAm Cloned");
+// };
+
+// document.addEventListener("click", (e) => {
+//   if (e.target.className === "Clone") {
+//     console.log("Iam Cloned");
+//   }
+// });
+
+//  -------------------------------Dom Challenge
+
+// let header = document.createElement("header");
+// let content = document.createElement("div");
+// let footer = document.createElement("footer");
+
+// header.className = "Header-Website";
+// content.className = "container";
+// footer.className = "footer";
+
+// // Start Header
+// let hTwo = document.createElement("h2");
+// hTwo.className = "logo";
+// header.appendChild(hTwo);
+// let links = document.createElement("ul");
+// links.className = "menu";
+
+// let arr = ["Home", "About", "Service", "Contact"];
+
+// for (let i = 0; i < 4; i++) {
+//   lis = document.createElement("li");
+//   links.appendChild(lis);
+//   lis.append(arr[i]);
+//   lis.style.cssText = "list-Style: none; padding: 6px 15px";
+//   header.appendChild(links);
+// }
+
+// let textH2 = document.createTextNode("Elzero");
+// hTwo.appendChild(textH2);
+
+// header.style.cssText =
+//   "display: flex; justify-content: space-between; padding: 15px;";
+// hTwo.style.cssText = "color: green;";
+// links.style.cssText = "display: flex;";
+// // End Header
+
+// // Start Container
+
+// for (let j = 0; j < 15; j++) {
+//   products = document.createElement("div");
+//   products.className = "product";
+//   content.appendChild(products);
+//   span = document.createElement("span");
+//   products.appendChild(span);
+//   let spantext = document.createTextNode(j + 1);
+//   span.appendChild(spantext);
+//   word = document.createElement("p")
+//   wordtext = document.createTextNode("product")
+//   word.appendChild(wordtext)
+//   span.append(word)
+//   products.style.cssText = "background-color: #ffffff; padding: 15px; font-weight: 600";
+// }
+
+// content.style.cssText =
+//  "display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); background-color: #ececec; gap: 15px; padding: 15px; text-align: center; height: 84.3vh; font-size: 24px;";
+// // End Container
+
+// // Start Footer
+// let textF = document.createTextNode("Copyright 2022");
+// footer.appendChild(textF);
+// footer.style.cssText = "background-color: #23a96e; padding: 15px; color: #e7faf4; text-align: center; font-size: 20px";
+// // End Footer
+
+// document.body.appendChild(header);
+// document.body.appendChild(content);
+// document.body.appendChild(footer);
+
+// --------------------------------What Is BOM
