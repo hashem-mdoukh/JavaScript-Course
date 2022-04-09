@@ -5,3 +5,42 @@
     
 }
 
+.container {
+    width: 600px;
+    margin: 30px auto;
+}
+
+.form {
+    margin-bottom: 20px;
+    background-color: #ccc5;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.form input[type = "text"]{
+    width: 450px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 5px;
+}
+
+.form input[type = "submit"] {
+    background-color: red;
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.tasks {
+    width: 100%;
+    background-color: #ccc5;
+    height: 50px;
+    border-radius: 5px;
+}
+ 

@@ -440,6 +440,33 @@
 //     console.log("Unknown Day")
 // }
 
+// let day = "Friday"
+
+// switch (day) {
+//   case "Firday":
+//   case "Saturday":
+//   case "Sunday":
+//     console.log("No Appointments Available");
+//   break;
+
+//   case "Thursday":
+//   case "Monday":
+//     console.log("From 10:00 AM To 5:00 PM");
+//   break;
+
+//   case "Tuesday":
+//     console.log("From 10:00 AM To 6:00 PM");
+//   break;
+
+//   case "Wednesday":
+//     console.log("From 10:00 AM To 7:00 PM");
+//   break;
+
+//   case "World":
+//     console.log("Its Not A Valid Day");
+//   break;
+// }
+
 // ----------------------------Arrays
 
 // let myFriends = ["Mohmmed","Mahmoud","Hussein", ["Fares", "Ashraf"]]
@@ -2388,3 +2415,767 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // document.body.appendChild(footer);
 
 // --------------------------------What Is BOM
+/*
+  BOM [Browser Object Model]
+  - Introduction
+  --- Window Object Is The Browser Window
+  --- Window Contain The Document Object
+  --- All Global Variables And Objects And Functions Are Members Of Window Object
+  ------ Test Document And Console
+  - What Can We Do With Window Object ?
+  --- Open Window
+  --- Close Window
+  --- Move Window
+  --- Resize Window
+  --- Print Document
+  --- Run Code After Period Of Time Once Or More
+  --- Fully Control The URL
+  --- Save Data Inside Browser To Use Later
+*/
+
+// window.document.title = "Hello js";
+
+// -----------------------------------------------Alert, Confirm, Prompt
+/*
+  BOM [Browser Object Model]
+  - alert(Message) => Need No Response Only Ok Available
+  - confirm(Message) => Need Response And Return A Boolean
+  - prompt(Message, Default Message) => Collect Data
+*/
+
+// window.alert("test");
+// this.alert("test");
+// alert("test");
+// console.log("test");
+
+// let confirmMsg = confirm("Are You Sure?");
+
+// console.log(confirmMsg);
+
+// if ( confirmMsg === true ) {
+//   console.log("Item Deleted");
+// } else {
+//   console.log("Item Not Deleted");
+// }
+
+// let confirmMsg = prompt("Suitable Day To You ?", "sunday");
+
+// console.log(confirmMsg);
+
+// -------------------------------------------setTimeout and clearTimeout
+/*
+  BOM [Browser Object Model]
+  - setTimeout(Function, Timeout, Additional Params)
+  - clearTimeout(Identifier)
+*/
+
+// setTimeout(() => {
+//   console.log(`Msg`);
+// }, 2000);
+
+// setTimeout(sayMessage, 2000);
+
+// function sayMessage () {
+//   console.log("Iam Msg");
+// }
+
+// setTimeout(sayMessage, 2000, "hashem", 20);
+
+// function sayMessage(user, age) {
+//   console.log(`Iam Message For ${user} His Age Is ${age}`);
+// }
+
+// let counter = setTimeout(sayMessage, 5000);
+
+// function sayMessage() {
+//   console.log(`Iam Message`);
+// }
+
+// let btn = document.querySelector("button")
+
+// btn.onclick = function () {
+//   clearTimeout(counter)
+// }
+
+// -----------------------------------------setInterval and clearInterval
+/*
+  BOM [Browser Object Model]
+  - setInterval(Function, Millseconds, Additional Params)
+  - clearInterval(Identifier)
+*/
+
+// setInterval(function () {
+//   console.log(`Msg`);
+// }, 1000);
+
+// setInterval(sayMsg, 1000);
+
+// function sayMsg() {
+//   console.log(`Iam Message`);
+// }
+
+// setInterval(sayMsg, 1000, "Osama", 38);
+
+// function sayMsg(user, age) {
+//   console.log(`Iam Message For ${user} His Age Is: ${age}`);
+// }
+
+// let div = document.querySelector("div");
+
+// function countdown() {
+//   div.innerHTML -= 1;
+//   if (div.innerHTML === "0") {
+//     clearInterval(counter);
+//   }
+// }
+
+// let counter = setInterval(countdown, 1000);
+
+//  -----------------------------------------------Window Location Object
+/*
+  BOM [Browser Object Model]
+  - location Object
+  --- href Get / Set [URL || Hash || File || Mail]
+  --- host
+  --- hash
+  --- protocol
+  --- reload()
+  --- replace()
+  --- assign()
+*/
+
+// console.log(location);
+// console.log(location.href);
+
+// location.href = "https://google.com";
+// location.href = "/#sec02";
+
+// console.log(location.host);
+// console.log(location.hostname);
+
+// console.log(location.protocol);
+
+// console.log(location.hash);
+
+//  ----------------------------------------------Window Open And Close
+/*
+  BOM [Browser Object Model]
+  - open(URL [Opt], Window Name Or Target Attr [Opt], Win Features [Opt], History Replace [Opt])
+  - close()
+  - Window Features
+  --- left [Num]
+  --- top [Num]
+  --- width [Num]
+  --- height [Num]
+  --- menubar [yes || no]
+
+  Search
+  - Window.Open Window Features
+*/
+
+// setTimeout( function () {
+//   window.open("https://google.com","_balnk","width=400,height=400,top=200,left=200")
+// }, 2000)
+
+//  -------------------------------------------Window History Object
+/*
+  BOM [Browser Object Model]
+  - History API
+  --- Properties
+  ------ length
+  --- Methods
+  ------ back()
+  ------ forward()
+  ------ go(Delta) => Position In History
+
+  Search [For Advanced Knowledge]
+  - pushState() + replaceState()
+*/
+// console.log(history);
+
+//  ---------------------------------Scroll, ScrollTo, ScrollBy, Focus, Print, Stop
+/*
+  BOM [Browser Object Model]
+  - stop()
+  - print()
+  - focus()
+  - scrollTo(x, y || Options)
+  - scroll(x, y || Options)
+  - scrollBy(x, y || Options)
+*/
+
+// let newOpenWindow = window.open("https://google.com", "width=500, hieght=500");
+
+// window.scrollTo({
+//   left: 500,
+//   top: 200,
+//   behavior: "smooth"
+// });
+
+//  ------------------------------------------Scroll To Top Using Y Practice
+/*
+  BOM [Browser Object Model]
+  - Practice => Scroll To Top
+  - scrollX [Alias => PageXOffset]
+  - scrollY [Alias => PageYOffset]
+*/
+
+// console.log(window.scrollX === window.pageXOffset);
+
+// let btn = document.querySelector("button");
+
+// window.onscroll = function () {
+//   if (window.scrollY >= 600) {
+//     btn.style.display = "block";
+//   } else {
+//     btn.style.display = "none";
+//   }
+// };
+
+// btn.onclick = function () {
+//   window.scrollTo({
+//     left: 0,
+//     top: 0,
+//     behavior: "smooth"
+//   })
+// };
+
+// Assigmnent Number One
+
+// let propmtMsg = prompt("Print Number From - To", "Example: 5-10");
+
+// Assigmnent Number Tow
+
+// function popup() {
+//   let popup = document.createElement("div");
+//   let h2 = document.createElement("h2");
+//   let p = document.createElement("p");
+
+//   let textH2 = document.createTextNode("Welcome");
+//   let textP = document.createTextNode("Welcome To Elzero Web School");
+
+//   h2.appendChild(textH2)
+//   p.appendChild(textP)
+
+//   popup.style.csstext = "border: 1px solid #ccc; padding: 50px"
+// }
+
+// setTimeout(popup, 5000);
+
+// Assignment Number Three
+
+// let divAS = document.querySelector("div");
+
+// function countdown() {
+//   divAS.innerHTML -= 1;
+
+//   if (divAS.innerHTML === "0") {
+//     clearInterval(counter);
+//   }
+// }
+
+// let counter = setInterval(countdown, 1000);
+
+// Assignment Number Fore And Five
+
+// let divAS = document.querySelector("div");
+
+// function countdown() {
+//   divAS.innerHTML -= 1;
+
+//   if (divAS.innerHTML === "5") {
+//     window.open("https://Elzero.org", "", "width= 400, height= 400,left= 500, top= 200");
+//   } else if(divAS.innerHTML === "0") {
+//     clearInterval(counter)
+//   }
+// }
+
+// let counter = setInterval(countdown, 1000);
+
+//  ----------------------------------------------Local Storage
+/*
+  BOM [Browser Object Model]
+  Local Storage
+  - setItem
+  - getItem
+  - removeItem
+  - clear
+  - key
+
+  Info
+  - No Expiration Time
+  - HTTP And HTTPS
+  - Private Tab
+*/
+
+// Set
+
+// window.localStorage.setItem("color", "#f00");
+// window.localStorage.fontWeight = "bold";
+// window.localStorage["fontSize"] = "20px";
+
+// Get
+
+// console.log(window.localStorage.getItem("color"));
+// console.log(window.localStorage.color);
+// console.log(window.localStorage["color"]);
+
+// Remove One
+
+// window.localStorage.removeItem("");
+
+// Clear(Remove) All
+
+// window.localStorage.clear();
+
+// Get Key
+
+// console.log(window.localStorage.key(0));
+
+// Set Color In Page
+
+// let mybtn = document.getElementById("Change-Color");
+
+// mybtn.onclick = () => {
+//   document.body.style.background = window.localStorage["color"];
+// };
+
+// setTimeout(() =>{
+//    document.body.style.background = window.localStorage["color"];
+// }, 2000)
+
+// console.log(window.localStorage);
+// console.log(typeof window.localStorage);
+
+//  -----------------------------Local Storage Color Application Practice
+
+// let lis = document.querySelectorAll("ul li");
+// let exp = document.querySelector(".experiment");
+
+// if (window.localStorage.getItem("color")) {
+//   // If There Is Color In local Storage
+//   exp.style.backgroundColor = window.localStorage.getItem("color");
+//   // REmove Active Class Form All lis
+//   lis.forEach((li) => {
+//     li.classList.remove("active");
+//   });
+//   // Add Active Class From All Lis
+//   document.querySelector(`[data-color = ${window.localStorage.getItem("color")}]`).classList.add("active")
+// }
+
+// lis.forEach((li) => {
+//   li.addEventListener("click", (e) => {
+//     // console.log(e.currentTarget.dataset.color);
+
+//     // REmove Active Class Form All lis
+//     lis.forEach((li) => {
+//       li.classList.remove("active");
+//     });
+
+//     // Add Active Class To Current Element
+//     e.currentTarget.classList.add("active");
+
+//     // Add Color TO Local Storage
+//     window.localStorage.setItem("color", e.currentTarget.dataset.color);
+
+//     // Change Div Background Color
+//     exp.style.backgroundColor = e.currentTarget.dataset.color;
+//   });
+// });
+
+//  ------------------------------------------Session Storage And Use Cases
+/*
+  BOM [Browser Object Model]
+  Session Storage
+  - setItem
+  - getItem
+  - removeItem
+  - clear
+  - key
+
+  Info
+  - New Tab = New Session
+  - Duplicate Tab = Copy Session
+  - New Tab With Same Url = New Session
+*/
+
+// window.localStorage.setItem("color", "gray");
+// window.sessionStorage.setItem("color", "blue");
+
+// document.querySelector(".name").onblur = function () {
+//   window.localStorage.setItem("input-name", this.value)
+// }
+
+// ----------------------------------------------------BOM Challenge
+
+//  -------------------------------------------Destructuring Arrays Part 1
+/*
+  Destructuring
+  " is a JavaScript expression that allows us to extract data from arrays,
+    objects, and maps and set them into new, distinct variables. "
+  - Destructuring Array
+*/
+
+// let a = 1;
+// let b = 2;
+// let c = 3;
+// let d = 4;
+
+// let myFriends = ["Ahmed", "Sayed", "Ali", "Maysa"];
+
+// [a = "A", b, c, d, e = "Hashem"] = myFriends;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+// console.log(e);
+
+// // console.log(myFriends[4]);
+
+// let [, y, , z] = myFriends;
+
+// // console.log(x);
+// console.log(y);
+// console.log(z);
+
+//  ------------------------------------------Destructuring Arrays Part 2
+
+// let myFriends = ["Ahmed", "Sayed", "Ali", ["Shady", "Amri", ["Mohammed", "Gamal"]]];
+
+// // console.log(myFriends[3][2][1]);
+
+// let [, , , [a, ,[,b]]] = myFriends;
+
+// console.log(a);
+// console.log(b);
+
+//  --------------------------------Destructuring Arrays Part 3 - Swap Variables
+/*
+  Destructuring
+  - Destructuring Array => Swapping Variables
+*/
+
+// let book = "Video";
+// let video = "Book";
+
+// // Save Book Value In Stash
+// let stash = book;
+
+// // Change Book Value
+// book = video
+
+// // Change Video Value
+// video = stash
+
+// [book, video] = [video, book]
+
+// console.log(book);
+// console.log(video);
+
+// -------------------------------------------------Destructuring Objects Part 1
+
+// const user = {
+//   theName: "Hashem",
+//   theAge: 19,
+//   theTitle: "Developer",
+//   theCountey: "Gaza",
+// };
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountey);
+
+// let theName = user.theName;
+// let theAge = user.theAge;
+// let theTitle = user.theTitle;
+// let theCountey = user.theCountey;
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountey);
+
+// ({ theName, theAge, theTitle, theCountey } = user);
+
+// const {theName, theAge, theTitlem, theCountey} = user
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountey);
+
+// -----------------------------------------------Destructuring Objects Part 2
+/*
+  Destructuring
+  - Destructuring Object
+  --- Naming The Variables
+  --- Add New Property
+  --- Nested Object
+  --- Destructuring The Nested Object Only
+*/
+
+// const user = {
+//   theName: "Hashem",
+//   theAge: 19,
+//   TheTitle: "Developer",
+//   TheCountey: "Gaza",
+//   theColor: "Black",
+//   skills :{
+//     html: 70,
+//     css: 80,
+//   }
+// };
+
+// const { theName: n, theAge: a, TheCountey, theColor: co = "Red", skills : { html: h, css: cs} } = user;
+
+// console.log(n);
+// console.log(a);
+// console.log(TheCountey);
+// console.log(co);
+// console.log(`My HTML Progress Is ${h} And My CSS Progress IS ${cs}`);
+
+// const {html : skillsOne, css: skillsTwo} = user.skills
+
+// console.log(skillsOne);
+// console.log(skillsTwo);
+
+//  ----------------------------------Destructuring Function Parameters
+
+// const user = {
+//   theName: "Osama",
+//   theAge: 39,
+//   skills: {
+//     html: 70,
+//     css: 80,
+//   },
+// };
+
+// showDetails(user);
+
+// function showDetails(obj) {
+//   console.log(`Your Name Is ${obj.theName}`);
+//   console.log(`Your Age Is ${obj.theAge}`);
+//   console.log(`Your CSS Skill Progress Is ${obj.skills.css}`);
+// }
+
+// function showDetails({ theName: N, theAge: A, skills: { css: C } } = user) {
+//   console.log(`Your Name Is ${N}`);
+//   console.log(`Your Age Is ${A}`);
+//   console.log(`Your CSS Skill Progress Is ${C}`);
+// }
+
+//  ---------------------------------------Destructuring Mixed Content
+/*
+  Destructuring
+  - Destructuring Mixed Content
+*/
+
+// const user = {
+//   theName: "Osama",
+//   theAge: 39,
+//   skills: ["HTML", "CSS", "JavaScript"],
+//   addresses: {
+//     egypt: "Cairo",
+//     ksa: "Riyadh",
+//   },
+// };
+
+// const {
+//   theName: N,
+//   theAge: A,
+//   skills: [a, b, c],
+//   addresses: { egypt: E, ksa: K },
+// } = user;
+
+// console.log(`Your Name IS ${N}`);
+// console.log(`Your Age IS ${A}`);
+// console.log(`Your Skills Is ${a}, ${b}, ${c}`);
+// console.log(`You Live In ${E}`);
+
+//  --------------------------------------------Destructuring Challenge
+
+// let chosen = 1;
+
+// let myFriends = [
+//   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+//   { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+//   { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+// ];
+
+// if (chosen === 1) {
+//   const {
+//     title: T,
+//     age: A,
+//     available: Av,
+//     skills: [, C],
+//   } = myFriends[0];
+
+//   console.log(T);
+//   console.log(A);
+//   if(Av === true) {
+//     console.log("Available");
+//   } else {
+//     console.log(" Not Available");
+//   }
+//   console.log(C);
+// } else if (chosen === 2) {
+//   const {
+//     title: T,
+//     age: A,
+//     available: Av,
+//     skills: [, D],
+//   } = myFriends[1];
+
+//   console.log(T);
+//   console.log(A);
+//   if(Av === true) {
+//     console.log("Available");
+//   } else {
+//     console.log(" Not Available");
+//   }
+//   console.log(D);
+// } else if(chosen === 3) {
+//   const {
+//     title: T,
+//     age: A,
+//     available: Av,
+//     skills: [, L],
+//   } = myFriends[2];
+
+//   console.log(T);
+//   console.log(A);
+//   if(Av === true) {
+//     console.log("Available");
+//   } else {
+//     console.log(" Not Available");
+//   }
+//   console.log(L);
+// }
+
+// Assignment Number One
+
+// let myNumbers = [1, 2, 3, 4, 5];
+
+// let [a, , , , e] =myNumbers;
+
+// console.log(a*e);
+
+// Assignment Number Two
+
+// let mySkills = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   ["PHP", "Python", ["Django", "Laravel"]],
+// ];
+
+// [a, b, c, [d, e, [f, g]]] = mySkills;
+
+// console.log(`My Skills: ${a}, ${b}, ${c}, ${d}, ${e}, ${f}, ${g}`);
+
+// Assgnment Number Three
+
+// let arr1 = ["Ahmed", "Sameh", "Sayed"];
+// let arr2 = ["Mohamed", "Gamal", "Amir"];
+// let arr3 = ["Haytham", "Shady", "Mahmoud"];
+
+// let finalArr = arr3.concat(arr2, arr1);
+
+// [,a,b,,,,c,,] = finalArr
+
+// console.log(`My Best Friends: ${a}, ${b}, ${c}`); // My Best Friends: Shady, Mahmoud, Ahmed
+
+// Assignment Number Fore
+
+// const member = {
+//   age: 30,
+//   working: false,
+//   country: "Egypt",
+//   hobbies: ["Reading", "Swimming", "Programming"],
+// };
+
+// const {age: A, working: W, country: C, hobbies: [h1,h2,h3]} = member
+// console.log(`My Age Is ${A} And Iam ${W === true ? "" : "Not"} Working`);
+// console.log(`I Live in ${C}`);
+// console.log(`My Hobbies: ${h1} And ${h3}`);
+
+// Assignment Number Five
+
+// const game = {
+//   title: "YS",
+//   developer: "Falcom",
+//   releases: {
+//     "Oath In Felghana": ["USA", "Japan"],
+//     "Ark Of Napishtim": {
+//       US: "20 USD",
+//       JAP: "10 USD",
+//     },
+//     Origin: "30 USD",
+//   },
+// };
+
+// const {title: T, developer: D, (releases: {["Oath In Felghana"]: O: [U, J], ["Ark Of Napishtim"]: A:{us: U_price, JAP: J_price}, origin: Or})} = game
+// console.log(`My Favourite Games Style Is ${T} Style`);
+// console.log(`And I Love ${D} Games`);
+// console.log(`My Best Release Is ${O} It Released in ${U} & ${J}`);
+// // My Best Release Is Oath In Felghana It Released in USA & Japan
+
+// console.log(`Although I Love ${A}`);
+// // Although I Love Ark Of Napishtim
+
+// console.log(`${A} Price in USA Is ${U_price}`);
+// // Ark Of Napishtim Price in USA Is 20 USD
+
+// console.log(`${A} Price in USA Is ${J_price}`);
+// // Ark Of Napishtim Price in USA Is 10 USD
+
+// console.log(`Origin Price Is ${Or}`);
+// // Origin Price Is 30 USD
+
+//  ------------------------------------------Set Data Types And Methods
+/*
+  - Set Data Type
+  Syntax: new Set(Iterable)
+  -- Object To Store Unique Values
+  -- Cannot Access Elements By Index
+
+  Properties:
+  - size
+
+  Methods:
+  - add
+  - delete
+  - clear
+  - has
+*/
+
+// let myData = [1, 1, 1, 2, 3, "A"];
+// // let myUniqueData = new Set([1, 1, 1, 2, 3]);
+// // let myUniqueData = new Set(myData);
+// // let myUniqueData = new Set().add(1).add(1).add(1).add(2).add(3);
+// let myUniqueData = new Set();
+
+// myUniqueData.add(1).add(1).add(1);
+// myUniqueData.add(2).add(3).add("A");
+
+// console.log(myData);
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
+
+// console.log(myData[0]);
+// console.log(myUniqueData[0]);
+
+// myUniqueData.delete(2);
+// console.log(myUniqueData.delete(2));
+
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
+
+// myUniqueData.clear()
+
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
+
+// console.log(myUniqueData.has("A"));
