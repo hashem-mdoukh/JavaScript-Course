@@ -3179,3 +3179,548 @@ reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, 
 // console.log(myUniqueData.size);
 
 // console.log(myUniqueData.has("A"));
+
+//  -----------------------------------------Map Data Type Vs Object
+
+// let myObject = {};
+// let myEmptyObject = Object.create(null);
+// let myMap = new Map();
+
+// console.log(myObject);
+// console.log(myEmptyObject);
+// console.log(myMap);
+
+// let myNewObject = {
+//   10: "Number",
+//   10: "String",
+// };
+
+// console.log(myNewObject[10]);
+
+// let myNewMap = new Map();
+
+// myNewMap.set(10, "Number");
+// myNewMap.set("10", "String");
+// myNewMap.set(true, "Boolean");
+// myNewMap.set({a: 1, b: 2}, "Boolean");
+// myNewMap.set(function doSomeThing () {}, "Function");
+
+// console.log(myNewMap.get(10));
+// console.log(myNewMap.get("10"));
+
+// console.log("#######");
+
+// console.log(myNewObject);
+// console.log(myNewMap);
+
+//  -----------------------------------------Map Methods
+
+// let myMap = new Map([
+//   [10, "Number"],
+//   ["Name", "Steing"],
+//   [false, "Boolean"]
+// ]);
+
+// myMap.set(10, "Number");
+// myMap.set("Name", "Steing");
+
+// console.log(myMap);
+
+// console.log(myMap.get(10));
+// console.log(myMap.get("Name"));
+// console.log(myMap.get(false));
+
+// console.log("########");
+// console.log(myMap.has(false));
+// console.log("########");
+
+// console.log(myMap.size);
+
+// console.log(myMap.delete(10));
+
+// console.log(myMap.size);
+
+// myMap.clear();
+
+// console.log(myMap.size);
+
+//  --------------------------------------Map Vs WeakMap
+
+// let mapUser = {
+//   theName: "hashem",
+// };
+
+// let myMap = new Map();
+
+// myMap.set(mapUser, "Object Value");
+
+// mapUser = null; // Override The Reference
+
+// console.log(myMap);
+
+// console.log("#".repeat(20));
+
+// let wMapUser = {
+//   theName: "hashem",
+// };
+
+// let myWeakMap = new WeakMap();
+
+// myWeakMap.set(wMapUser, "Object Value");
+
+// wMapUser = null //Override The Reference
+
+// console.log(myWeakMap);
+
+//  -----------------------------------------Array.from Method
+
+// console.log(Array.from("Hashem"));
+
+// console.log(
+//   Array.from("123456", function (num) {
+//     return num * 1 + num * 1;
+//   })
+// );
+
+// // Arrow Function
+// console.log(Array.from("123456", (num) => num * 1 + num * 1));
+
+// let myArray = [1, 1, 1, 2, 3, 4];
+
+// let mySet = new Set(myArray);
+
+// // console.log(Array.from(mySet));
+// // console.log([...new set(myArray)]);
+
+// function af() {
+//   return Array.from(arguments);
+// }
+
+// console.log(af("Hashem", "Ahmed", "Sayed"));
+
+//  ------------------------------------------Array.copyWithin Method
+
+// let myArray = [10, 20, 30, 40, 50, "A", "B"];
+
+// myArray.copyWithin(3); // [10, 20, 30, 10, 20, 30, 40]
+
+// myArray.copyWithin(4, 6); // [10, 20, 30, 40, 'B', 'A', 'B']
+
+// myArray.copyWithin(4, -1); // [10, 20, 30, 40, 'B', 'A', 'B']
+
+// myArray.copyWithin(1, -2); // [10, 'A', 'B', 40, 'B', 'A', 'B']
+
+// myArray.copyWithin(1, -2, -1); // [10, 'A', 30, 40, 'B', 'A', 'B']
+
+// console.log(myArray);
+
+//  -------------------------------------------Array.some Method
+
+// let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// let myNumber = 5;
+
+// // let check = nums.some(function (e) {
+// //   console.log("Test");
+// //   return e > 5;
+// // });
+
+// let check = nums.some(function (e) {
+//   return e > this;
+// }, myNumber);
+
+// // let check = nums.some( (e) => e > 5);
+
+// console.log(check);
+
+// function checkValues(arr, val) {
+//   return arr.some(function (e) {
+//     return e === val;
+//   });
+// }
+
+// console.log(checkValues(nums, 20));
+// console.log(checkValues(nums, 5));
+
+// let range = {
+//   min: 10,
+//   max: 20,
+// };
+
+// let checkNumberInRange = nums.some(function (e) {
+//     return e >= this.min && e <= this.max;
+// }, range)
+
+// console.log(checkNumberInRange);
+
+//  -------------------------------------------Array.every Method
+
+// const locations = {
+//   20: "Place 1",
+//   30: "Place 2",
+//   50: "Place 3",
+//   40: "Place 4",
+// };
+
+// let mainlocations = 15;
+
+// let locationsArray = Object.keys(locations);
+
+// console.log(locationsArray);
+
+// let locationArrayNumber = locationsArray.map( N => +N)
+
+// console.log(locationArrayNumber);
+
+// let check = locationArrayNumber.every( function (e) {
+//   return e > this
+// }, mainlocations);
+
+// console.log(check);
+
+//  --------------------------------------Spread Syntax And Use Cases
+
+/*
+  Spread Operator => ...Iterable
+  "Allow Iterable To Expand In Place"
+*/
+
+// Spread With String => Expand String
+
+// console.log("Osama");
+// console.log(..."Osama");
+// console.log([..."Osama"]);
+
+// // Concatenate Arrays
+
+// let myArray1 = [1, 2, 3];
+// let myArray2 = [4, 5, 6];
+
+// let allArrays = [...myArray1, ...myArray2];
+// console.log(allArrays);
+
+// // Copy Array
+
+// let copiedArray = [...myArray1];
+// console.log(copiedArray);
+
+// // Push Inside Array
+
+// let allFriends = ["Osama", "Ahmed", "Sayed"];
+// let thisYearFriends = ["Sameh", "Mahmoud"];
+
+// allFriends.push(...thisYearFriends);
+
+// console.log(allFriends);
+
+// // Use With Math Object
+
+// let myNums = [10, 20, -100, 100, 1000, 500];
+// console.log(Math.max(...myNums));
+
+// // Spread With Objects => Merge Objects
+
+// let objOne = {
+//   a: 1,
+//   b: 2,
+// };
+// let objTwo = {
+//   c: 3,
+//   d: 4,
+// };
+
+// console.log({ ...objOne, ...objTwo, e: 5 });
+
+// let theName = "Elzero";
+
+// console.log([...theName]);
+// console.log(Array.from(theName));
+// console.log();
+
+// // Assignment Number One
+// let setOfNumber = new Set().add(10);
+
+// setOfNumber.add(20).add(2);
+
+// console.log(setOfNumber);
+// console.log();
+
+//  ----------------------------------Intro And What Is Regular Expression
+
+/*
+  Regular Expression
+  - Email
+  - IP
+  - Phone
+  - URL
+*/
+
+// let str1 = '10 20 100 1000 5000';
+// let str2 = 'Os1 Os12 Os123 Os123Os Os12312Os123';
+
+// let invalidEmail = 'Osama@@@gmail....com';
+// let validEmail = 'O@nn.sa';
+
+// let ip = '192.168.2.1' // IPV4
+
+// let url = 'elzero.org'
+// let url = 'elzero.org/';
+// let url = 'http://elzero.org/';
+// let url = 'http://www.elzero.org/';
+// let url = 'https://.elzero.org/';
+// let url = 'https://www.elzero.org/';
+// let url = 'https://www.elzero.org/?facebookid=asdasdasd';
+
+//  -------------------------------------------Regular Expressions - Modifiers
+
+/*
+  Regular Expression
+
+  Syntax
+  /pattern/modifier(s);
+  new RegExp("pattern", "modifier(s)")
+
+  Modifiers => Flags
+  i => case-insensitive
+  g => global
+  m => Multilines
+
+  Search Methods
+  - match(Pattern)
+
+  Match
+  -- Matches A String Against a Regular Expression Pattern
+  -- Returns An Array With The Matches
+  -- Returns null If No Match Is Found.
+*/
+
+// let myString = "Hello Elzero Web School I Love elzero";
+
+// let regex = /elzero/ig;
+
+// console.log(myString.match(regex));
+
+//  ---------------------------Regular Expressions - Ranges Part 1
+/*
+  Regular Expression
+
+  Ranges
+
+  - Part 1
+  (X|Y) => X Or Y
+  [0-9] => 0 To 9
+  [^0-9] => Any Character Not 0 To 9
+  Practice
+
+  - Part 2
+  [a-z]
+  [^a-z]
+  [A-Z]
+  [^A-Z]
+  [abc]
+  [^abc]
+
+*/
+
+// let tld = "Com Net Org Info Code Io";
+// let tldRe = /(org|info|io)/gi;
+
+// console.log(tld.match(tldRe));
+
+// let nums = "12345678910";
+// let numsRe = /[0-2]/g;
+
+// console.log(nums.match(numsRe));
+
+// let notNums = "12345678910";
+// let notNumsRe = /[^0-2]/g;
+
+// console.log(notNums.match(notNumsRe));
+
+// let SpecialNums = "!1@23#4$5%678910";
+// let SpecialNumsRe = /[^0-9]/g;
+
+// console.log(SpecialNums.match(SpecialNumsRe));
+
+// let Practice = "Os1 Os1Os Os2 Os8 Os8Os";
+// let PracticeRe = /Os[5-9]Os/g;
+
+// console.log(Practice.match(PracticeRe));
+
+//  ---------------------------------------Regular Expressions - Ranges Part 2
+
+// let myString = "AaBbcdefG123!234%^&*";
+// let atozSmall = /[a-z]/g;
+// let NotAtozSmall = /[^a-z]/g;
+
+// let atozCapital = /[A-Z]/g;
+// let NotAtozCapital = /[^A-Z]/g;
+
+// let aAndcAnde = /[ace]/g;
+// let NotaAndcAnde = /[^ace]/g;
+
+// let lettersCapsAndSmall = /[a-zA-Z]/g;
+// let NumsAndSpecials = /[^a-zA-Z]/g;
+
+// let specials = /[^a-zA-Z0-9]/g;
+
+// console.log(myString.match(atozSmall));
+// console.log(myString.match(NotAtozSmall));
+
+// console.log(myString.match(atozCapital));
+// console.log(myString.match(NotAtozCapital));
+
+// console.log(myString.match(aAndcAnde));
+// console.log(myString.match(NotaAndcAnde));
+
+// console.log(myString.match(lettersCapsAndSmall));
+// console.log(myString.match(NumsAndSpecials));
+
+// console.log(myString.match(specials));
+
+//  -----------------------------Regular Expressions - Character Classes Part 1
+/*
+  Regular Expression
+  Character Classes
+  . => matches any character, except newline or other line terminators.
+  \w => matches word characters. [a-z, A-Z, 0-9 And Underscore]
+  \W => matches Non word characters
+  \d => matches digits from 0 to 9.
+  \D => matches non-digit characters.
+  \s => matches whitespace character.
+  \S => matches non whitespace character.
+*/
+
+// let email = "O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com";
+// let dot = /./g;
+// let word = /\w/g;
+// let valid = /\w@\w.(com|net)/g;
+// console.log(email.match(dot));
+// console.log(email.match(word));
+// console.log(email.match(valid));
+
+//  -----------------------------Regular Expressions - Character Classes Part 2
+/*
+  Regular Expression
+  Character Classes
+  \b => matches at the beginning or end of a word.
+  \B => matches NOT at the beginning/end of a word.
+
+  Test Method
+  pattern.test(input)
+*/
+
+// let names = "Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+// let re = /(\bspam|spam\b)/gi;
+
+// console.log(names.match(re));
+
+// console.log(re.test(names));
+// console.log(/(\bspam|spam\b)/gi.test("Osama"));
+// console.log(/(\bspam|spam\b)/gi.test("1spam"));
+// console.log(/(\bspam|spam\b)/gi.test("spam1"));
+
+//  -------------------------------------Regular Expressions - Quantifiers Part 1
+/*
+  Regular Expression
+
+  Quantifiers
+  n+    => One Or More
+  n*    => zero or more
+  n?    => zero or one
+*/
+
+// let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // All Emails
+// // let mailsRe = /\w+@\w+.(com|net)/ig;
+// let mailsRe = /\w+@\w+.\w+/ig;
+// console.log(mails.match(mailsRe))
+
+// let nums = "0110 10 150 05120 0560 350 00"; // 0 Numbers Or No 0
+// let numsRe = /0\d*0/g;
+// console.log(nums.match(numsRe));
+
+// let urls = "https://google.com http://www.website.net web.com"; // http + https
+// let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+// console.log(urls.match(urlsRe));
+
+//  ------------------------------------Regular Expressions - Quantifiers Part 2
+/*
+  Regular Expression
+
+  Quantifiers
+  n{x}   => Number of
+  n{x,y} => Range
+  n{x,}  => At Least x
+*/
+
+// let serials = "S100S S3000S S50000S S950000S";
+
+// console.log(serials.match(/s\d{3}s/gi)); // S[Three Number]S
+// console.log(serials.match(/s\d{4,5}s/gi)); // S[Four Or Five Number]S
+// console.log(serials.match(/s\d{4,}s/gi)); // S[At Least Four]S
+
+//  -------------------------------------Regular Expressions - Quantifiers Part 3
+/*
+  Regular Expression
+
+  Quantifiers
+  $  => End With Something
+  ^  => Start With Something
+  ?= => Followed By Something
+  ?! => Not Followed By Something
+*/
+
+// let myString = "We Love Programming";
+// let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+// console.log(/ing$/gi.test(myString));
+// console.log(/^we/gi.test(myString));
+// console.log(/lz$/gi.test(names));
+// console.log(/^\d/gi.test(names));
+
+// console.log(names.match(/\d\w{5}(?=z)/gi));
+// console.log(names.match(/\d\w{8}(?!z)/gi));
+
+//  -------------------------------Regular Expressions - Replace With Pattern
+/*
+  Regular Expression
+
+  - replace
+  - replaceAll
+*/
+
+// let txt = "We Love Programming And @ Because @ Is Amazing";
+// console.log(txt.replace("@", "javascript"));
+// console.log(txt.replaceAll("@", "javascript"));
+
+// let re =/@/gi;
+// console.log(txt.replaceAll(re, "javascript"));
+
+//  --------------------------------------Regular Expressions - Form Validation
+
+// document.getElementById("register").onsubmit = function () {
+//   let phoneInput = document.getElementById("phone").value;
+//   let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/g; //()1234 456-6789
+//   let ValidationResult = phoneRe.test(phoneInput);
+
+//   if (ValidationResult === false) {
+//     return false;
+//   }
+//   return true;
+// };
+
+//  ---------------------------------Regular Expressions - Challenge
+
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.net';
+let url4 = 'https://www.elzero.info';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+let re = /(https?:\/\/)?(www.)?\w+.(org|net|info)(:\d{1,}\/\w+.\w+\?\w+=\d{1,}&\w+=\w+)?/gi;
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
